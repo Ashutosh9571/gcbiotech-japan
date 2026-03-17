@@ -1,55 +1,81 @@
+/* RESET */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  background: #f5f8fc;
 }
 
-/* NAVBAR */
-.navbar {
+/* HEADER */
+header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  align-items: center;
+  padding: 20px 40px;
   background: #0b3d91;
   color: white;
 }
 
-.navbar nav a {
-  margin: 0 15px;
+nav a {
   color: white;
+  margin-left: 20px;
   text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
 
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
   url('images/hero.jpg');
+
   background-size: cover;
+  background-position: center;
 }
 
-.hero-content h1 {
+.hero h1 {
   font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 12px 25px;
   background: white;
   color: #0b3d91;
   border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #e6e6e6;
 }
 
 /* SECTION */
 .section {
-  padding: 60px 40px;
+  padding: 70px 40px;
   text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #0b3d91;
 }
 
 /* GRID */
@@ -57,13 +83,15 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
+  margin-top: 30px;
 }
 
 /* CARD */
 .card {
-  padding: 20px;
-  background: #f4f4f4;
+  background: white;
+  padding: 25px;
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
@@ -74,8 +102,10 @@ body {
 /* CEO */
 .ceo {
   display: flex;
-  gap: 30px;
   align-items: center;
+  gap: 30px;
+  text-align: left;
+  margin-top: 30px;
 }
 
 .ceo img {
@@ -94,22 +124,26 @@ body {
   transform: scale(1.05);
 }
 
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* FOOTER */
 footer {
   background: #0b3d91;
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  header {
+    flex-direction: column;
+  }
+
+  .ceo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
 }
